@@ -1,0 +1,37 @@
+[package]
+name = "rust-tooling"
+version = "0.1.0"
+description = "A collection of tools for working with Rust"
+
+license = "MIT"
+
+repository = "https://github.com/42ByteLabs/rust-tooling"
+
+edition = "2024"
+rust-version = "1.85"
+
+authors = ["42ByteLabs"]
+
+# This is a GitHub Action, not a CLI
+publish = false
+
+[dependencies]
+ghactions = { version = "^0.13", features = ["generate", "dotenvy", "octocrab"] }
+
+reqwest = { version = "^0.12", features = ["json"] }
+openssl = { version = "0.10", features = ["vendored"] }
+
+anyhow = "1"
+
+tokio = { version = "^1.43", features = [ "full" ] }
+
+log = "0.4"
+env_logger = "0.11"
+dotenvy = "0.15"
+clap = { version = "4.5.31", features = ["env", "derive"] }
+console = "0.15"
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+chrono = "0.4"
