@@ -7,11 +7,3 @@ ecosystems:
   - Rust
   - Containers
 
-# locations:
-#   - name: "Docs"
-#     ecosystem: "Docs"
-#     paths:
-#       - README.md
-#     patterns:
-#       - 'uses:\s+{repository}/publish@v{version}'
-
