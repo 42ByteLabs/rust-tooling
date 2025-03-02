@@ -1,8 +1,9 @@
 name: rust-tooling
 repository: 42bytelabs/rust-tooling
-version: 0.1.1
+version: 0.1.2
 
 ecosystems:
+  - Docs
   - Rust
   - Containers
 

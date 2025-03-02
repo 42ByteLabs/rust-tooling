@@ -18,3 +18,17 @@ jobs:
       contents: read
       security-events: write
 
+  container:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build container
+        run: | 
+          docker build -t rust-tooling .
+          docker run --rm rust-tooling --help
+
