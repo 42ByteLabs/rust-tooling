@@ -23,7 +23,7 @@ openssl = { version = "0.10", features = ["vendored"] }
 
 anyhow = "1"
 
-tokio = { version = "^1.43", features = [ "full" ] }
+tokio = { version = "^1.44", features = [ "full" ] }
 
 log = "0.4"
 env_logger = "0.11"
