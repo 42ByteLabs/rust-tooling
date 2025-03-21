@@ -33,6 +33,7 @@ jobs:
       contents: write
       packages: write
       security-events: write
+      attestations: write
     with:
       version: ${{ needs.project.outputs.version }}
       container-name: "42bytelabs/rust-tooling"
