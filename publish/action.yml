@@ -22,4 +22,4 @@ outputs:
     description: Version is different from remote version
 runs:
   using: docker
-  image: ./publish/Dockerfile
+  image: ./Dockerfile
