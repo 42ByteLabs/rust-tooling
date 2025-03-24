@@ -518,9 +518,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions"
-version = "0.13.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4a2f178b9b9269629841414c58df80b1e8ef0fc6e8d63474ba03f3c9f071afd9"
+checksum = "4527bddd64e6fb22b946b39a519efb39b38c299c8eafe9ed05b6d226b3f4e5f9"
 dependencies = [
  "ghactions-core",
  "ghactions-derive",
@@ -529,9 +529,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions-core"
-version = "0.13.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "44732b132544530d2af864d7bd365a92b35e154f58e4ab113caaecf5f7796380"
+checksum = "745123c1ec3c39bafa732f84c66b68562098bfcdc24e926fdcbc48c8692e7119"
 dependencies = [
  "env_logger",
  "glob",
@@ -547,9 +547,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions-derive"
-version = "0.13.0"
+version = "0.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e777d7b5a174795fee0d410bc2720b984b48f2ca63b2cc34d1cd672a45047e73"
+checksum = "b651d8905ca0105d930eb8bb69c13ada4631aa00739e9c97d69d88a68f6a1e76"
 dependencies = [
  "dotenvy",
  "ghactions-core",
@@ -604,9 +604,9 @@ checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
 name = "http"
-version = "1.2.0"
+version = "1.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f16ca2af56261c99fba8bac40a10251ce8188205a4c448fbb745a2e4daa76fea"
+checksum = "f4a85d31aea989eead29a3aaf9e1115a180df8282431156e533de47660892565"
 dependencies = [
  "bytes",
  "fnv",
@@ -893,9 +893,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.7.1"
+version = "2.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8c9c992b02b5b4c94ea26e32fe5bccb7aa7d9f390ab5c1221ff895bc7ea8b652"
+checksum = "3954d50fe15b02142bf25d3b8bdadb634ec3948f103d04ffe3031bc8fe9d7058"
 dependencies = [
  "equivalent",
  "hashbrown",
@@ -1361,9 +1361,9 @@ checksum = "2b15c43186be67a4fd63bee50d0303afffcef381492ebe2c5d87f324e1b8815c"
 
 [[package]]
 name = "reqwest"
-version = "0.12.14"
+version = "0.12.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "989e327e510263980e231de548a33e63d34962d29ae61b467389a1a09627a254"
+checksum = "d19c46a6fdd48bc4dab94b6103fccc55d34c67cc0ad04653aad4ea2a07cd7bbb"
 dependencies = [
  "base64",
  "bytes",
