@@ -1,6 +1,6 @@
 name: rust-tooling
 repository: 42bytelabs/rust-tooling
-version: 0.1.2
+version: 0.1.3
 
 ecosystems:
   - Docs
