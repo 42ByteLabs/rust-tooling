@@ -549,9 +549,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions"
-version = "0.14.2"
+version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b77fde1aa6a540b14b0197145dfec9e0db19bbc2f07b781afb1be00dd5e34aa"
+checksum = "99ba0d8dafc4980f5b0018bb29709667ee96e4e711fb3e364b46bde1c71cce6d"
 dependencies = [
  "ghactions-core",
  "ghactions-derive",
@@ -560,9 +560,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions-core"
-version = "0.14.2"
+version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "79d6c16d541170a1d1879e129bacc796a30305328cb13706f4b84c68a516f8bb"
+checksum = "f9ff4e392e7f4adb8d0cfd5cec97a8169d356041dd0a2dc352315828ab78ded5"
 dependencies = [
  "env_logger",
  "flate2",
@@ -583,9 +583,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions-derive"
-version = "0.14.2"
+version = "0.15.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c6b9a3e027f1d89347489397906b0dbf03b163b7bf729389a8fda03c7b7ed149"
+checksum = "9244f1626f76769e4fa0493c0d973177e851e0618f6925339880e3b4175b47c7"
 dependencies = [
  "dotenvy",
  "ghactions-core",
@@ -1155,9 +1155,9 @@ dependencies = [
 
 [[package]]
 name = "octocrab"
-version = "0.43.0"
+version = "0.44.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "27527d68322f4c603319f7958973db8f9fa4be62c0e3fafe084f5562cf6353df"
+checksum = "aaf799a9982a4d0b4b3fa15b4c1ff7daf5bd0597f46456744dcbb6ddc2e4c827"
 dependencies = [
  "arc-swap",
  "async-trait",
