@@ -19,7 +19,7 @@ The [Rust-Tooling][github] project is a collection of tools that can be used to 
 
 ```yaml
 - name: Publish to Crates.io
-  uses: 42ByteLabs/rust-tooling/publish@v0.1.4
+  uses: 42ByteLabs/rust-tooling/publish@v0.1.5
   with:
     token: ${{ secrets.CARGO_PUBLISH_TOKEN }}
 ```
