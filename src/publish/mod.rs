@@ -88,18 +88,18 @@ impl RustCratePublishAction {
             log::info!("🦀 Current version  :: v{}", latest_crate.num);
             log::info!("💻 Local version    :: v{}", local_version);
 
-            self.set_version(&local_version);
+            self.output_version(&local_version);
 
             if latest_crate.num == local_version {
                 log::info!("🍹 Crate is up to date. Lets sit back and relax...");
-                self.set_changed("false".to_string());
+                self.output_changed("false".to_string());
                 continue;
             }
 
             cargo.add_registry(self.registry.to_string());
 
             log::info!("🚀 Crate is out of date. Lets get to work...");
-            self.set_changed("true".to_string());
+            self.output_changed("true".to_string());
 
             if !self.token.is_empty() && !cargo.dry_run {
                 cargo.login(&self.token).await?;
