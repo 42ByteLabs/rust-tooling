@@ -1,5 +1,5 @@
 #![allow(unused)]
-use anyhow::Result;
+use anyhow::{Context, Result};
 
 fn client() -> reqwest::Client {
     reqwest::Client::builder()
@@ -21,14 +21,18 @@ pub async fn get_latest(name: String) -> Result<CrateVersion> {
         .get(url)
         .header("Accept", "application/json")
         .send()
-        .await?;
+        .await
+        .context("Failed to get crate version")?;
 
     if resp.status() != 200 {
         log::error!("Error :: {:?}", resp);
         return Err(anyhow::anyhow!("Failed to get crate version"));
     }
 
-    let json = resp.json::<CrateVersions>().await?;
+    let json = resp
+        .json::<CrateVersions>()
+        .await
+        .context("Failed to parse response")?;
 
     for version in json.versions.iter() {
         log::debug!("Crate Version: {:?}", version);
