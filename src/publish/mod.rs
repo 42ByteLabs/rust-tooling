@@ -1,6 +1,6 @@
 use std::path::PathBuf;
 
-use anyhow::Result;
+use anyhow::{Context, Result};
 use ghactions::Actions;
 
 use crate::utils::cargo::Cargo;
@@ -83,7 +83,9 @@ impl RustCratePublishAction {
                 }
             }
 
-            let latest_crate = crates::get_latest(name.to_string()).await?;
+            let latest_crate = crates::get_latest(name.to_string())
+                .await
+                .context("Failed to get latest crate")?;
 
             log::info!("🦀 Current version  :: v{}", latest_crate.num);
             log::info!("💻 Local version    :: v{}", local_version);
@@ -102,10 +104,16 @@ impl RustCratePublishAction {
             self.output_changed("true".to_string());
 
             if !self.token.is_empty() && !cargo.dry_run {
-                cargo.login(&self.token).await?;
+                cargo
+                    .login(&self.token)
+                    .await
+                    .context("Failed to login crates")?;
             }
 
-            cargo.publish(crate_name).await?;
+            cargo
+                .publish(crate_name)
+                .await
+                .context("Failed to publish crate")?;
         }
 
         Ok(())

@@ -1,4 +1,4 @@
-use anyhow::Result;
+use anyhow::{Context, Result};
 use std::path::PathBuf;
 
 /// Cargo configuration
@@ -53,13 +53,16 @@ impl Cargo {
         let mut cargo: Cargo = toml::from_str(&data)?;
 
         if let Some(Workspace { members, .. }) = &cargo.workspace {
-            let root = path.parent().unwrap();
+            let root = path.parent().context("Failed to get parent directory")?;
             for member in members.iter() {
                 log::debug!("Reading Cargo.toml from `{}`", member);
                 let member_path = root.join(member).join("Cargo.toml");
 
-                let member_data = tokio::fs::read_to_string(member_path).await?;
-                let member_cargo: Cargo = toml::from_str(&member_data)?;
+                let member_data = tokio::fs::read_to_string(member_path)
+                    .await
+                    .context("Failed to read cargo file")?;
+                let member_cargo: Cargo =
+                    toml::from_str(&member_data).context("Failed to parse cargo file")?;
                 cargo.packages.push(member_cargo.package.unwrap());
             }
             log::debug!("Found {} packages", cargo.packages.len());
@@ -141,7 +144,8 @@ impl Cargo {
             .args(args)
             .current_dir(&self.working_directory)
             .output()
-            .await?;
+            .await
+            .context("Failed to run cargo login")?;
 
         if output.status.success() {
             log::info!("🔑 Successfully logged into Crates.io");
@@ -177,7 +181,8 @@ impl Cargo {
             .args(args)
             .current_dir(&self.working_directory)
             .output()
-            .await?;
+            .await
+            .context("Failed to run cargo publish")?;
         if output.status.success() {
             log::info!("🚀 Successfully published to Crates.io");
         } else {
