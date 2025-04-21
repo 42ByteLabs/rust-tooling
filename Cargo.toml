@@ -28,7 +28,7 @@ tokio = { version = "^1.44", features = [ "full" ] }
 log = "0.4"
 env_logger = "0.11"
 dotenvy = "0.15"
-clap = { version = "4.5.36", features = ["env", "derive"] }
+clap = { version = "4.5.37", features = ["env", "derive"] }
 console = "0.15"
 
 serde = { version = "1", features = ["derive"] }
