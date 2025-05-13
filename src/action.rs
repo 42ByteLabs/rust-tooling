@@ -28,11 +28,14 @@ pub struct Arguments {
 
 #[derive(Subcommand, Debug)]
 pub enum Actions {
+    Script,
     Publish,
 }
 
 #[derive(Debug)]
 pub enum RustActions {
+    /// Script
+    Script(crate::script::RustToolingScriptAction),
     /// Publish a Rust Crate
     Publish(crate::publish::RustCratePublishAction),
 }
@@ -48,6 +51,10 @@ impl RustActions {
         );
 
         match arguments.action {
+            Actions::Script => {
+                let action = crate::script::RustToolingScriptAction::init()?;
+                Ok(RustActions::Script(action))
+            }
             Actions::Publish => {
                 let action = crate::publish::RustCratePublishAction::init()?;
                 Ok(RustActions::Publish(action))
@@ -57,6 +64,7 @@ impl RustActions {
 
     pub async fn run(&self) -> Result<()> {
         match self {
+            RustActions::Script(action) => action.run().await?,
             RustActions::Publish(action) => action.run().await?,
         }
         Ok(())
