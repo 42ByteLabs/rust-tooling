@@ -518,9 +518,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions"
-version = "0.16.0"
+version = "0.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c07f7eb08e2d0751a06c206c42f5e362d6ad6fa0c040582c60d3a2a158863ca"
+checksum = "bbe00ec663488b3bfdd83ae978898d5f5e6b530513e02e4bf3190ec05db523e6"
 dependencies = [
  "ghactions-core",
  "ghactions-derive",
