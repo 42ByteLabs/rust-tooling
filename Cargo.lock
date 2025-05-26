@@ -518,9 +518,9 @@ dependencies = [
 
 [[package]]
 name = "ghactions"
-version = "0.16.0"
+version = "0.16.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c07f7eb08e2d0751a06c206c42f5e362d6ad6fa0c040582c60d3a2a158863ca"
+checksum = "bbe00ec663488b3bfdd83ae978898d5f5e6b530513e02e4bf3190ec05db523e6"
 dependencies = [
  "ghactions-core",
  "ghactions-derive",
@@ -1886,9 +1886,9 @@ dependencies = [
 
 [[package]]
 name = "tokio"
-version = "1.45.0"
+version = "1.45.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2513ca694ef9ede0fb23fe71a4ee4107cb102b9dc1930f6d0fd77aae068ae165"
+checksum = "75ef51a33ef1da925cea3e4eb122833cb377c61439ca401b770f54902b806779"
 dependencies = [
  "backtrace",
  "bytes",
