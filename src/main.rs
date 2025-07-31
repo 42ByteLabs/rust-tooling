@@ -2,6 +2,7 @@ use anyhow::Result;
 
 mod action;
 mod publish;
+mod script;
 mod utils;
 
 use action::RustActions;
