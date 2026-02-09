@@ -16,7 +16,7 @@ authors = ["42ByteLabs"]
 publish = false
 
 [dependencies]
-ghactions = { version = "^0.18", features = ["generate", "dotenvy", "octocrab"] }
+ghactions = { version = "^0.19", features = ["generate", "dotenvy", "octocrab"] }
 
 reqwest = { version = "^0.12", features = ["json"] }
 openssl = { version = "0.10", features = ["vendored"] }
@@ -28,7 +28,7 @@ tokio = { version = "^1.49", features = [ "full" ] }
 log = "0.4"
 env_logger = "0.11"
 dotenvy = "0.15"
-clap = { version = "4.5.54", features = ["env", "derive"] }
+clap = { version = "4.5.57", features = ["env", "derive"] }
 console = "0.16"
 
 serde = { version = "1", features = ["derive"] }
